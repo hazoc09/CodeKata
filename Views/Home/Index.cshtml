@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Code Kata";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<script>
+     $('#file1').on('fileuploaded', function(event, previewId, index, fileId) {
+
+            url = '@Url.Action("SearchTable", "Home", null, null )';
+            $("#containerSearchTable").load(url, null);
+        });
+</script>
+<br />
+<div class="col-md-24">
+    <div id="containerSearchTable">
+
+
+    </div>
+</div>
+
+
+

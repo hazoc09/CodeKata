@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CodeKata.Models.Driver>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="col-md-24">
+        <div id="example_wrapper-2" class="dataTables_wrapper">
+            <table id="searchTable" class="table table-striped table-bordered" style="width:100%">
+                <tr>
+                    <th>Driver Name</th>
+                    <th>Total Miles Driven</th>
+                    <th>Total Hours Driven</th>
+                    <th>Average Speed</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.driverName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.totalMiles)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.totalHours)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.averageSpeed)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+    <button type="button" id="btnreport" class="btn btn-primary" style="float:right" onclick="location.href='@Url.Action("CreateReportFile", "Home")'">Get Report</button>
+    <br />
+</body>
+</html>
