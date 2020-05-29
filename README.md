@@ -1,7 +1,7 @@
 # CodeKata
-The Application process an input file.
+The Application process a text file (.txt).
 You can add the file with the following ways: 
--Drag or drop the file into the drop zone or click in it to select the file 
+-Drag and drop the file into the drop zone or click in it to select the file 
 -Write the path to the file in the input component 
 -Click in the "Browse.." button to navigate into the explorer and select the file. 
 Each line in the input file will start with a command and there are two possible commands: 
